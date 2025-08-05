@@ -1,0 +1,217 @@
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam
+$ git init
+Initialized empty Git repository in C:/Users/fs/Desktop/sam/.git/
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        repo/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (master)
+$ git add .
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (master)
+$ git checkout -b kasha
+Switched to a new branch 'kasha'
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git branch --all
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git branch --all
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git remote add origin https://github.com/sameekhsa/sameeksha
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git branch --all
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git add .
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git commit -m "merging branches"
+[kasha (root-commit) 4fbca6d] merging branches
+ 4 files changed, 11 insertions(+)
+ create mode 100644 repo/hello.txt
+ create mode 100644 repo/sam.txt
+ create mode 100644 repo/t1.txt
+ create mode 100644 repo/test.txt
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git push -u origin kasha
+info: please complete authentication in your browser...
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (7/7), 460 bytes | 153.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'kasha' on GitHub by visiting:
+remote:      https://github.com/sameekhsa/sameeksha/pull/new/kasha
+remote:
+To https://github.com/sameekhsa/sameeksha
+ * [new branch]      kasha -> kasha
+branch 'kasha' set up to track 'origin/kasha'.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git branch --all
+* kasha
+  remotes/origin/kasha
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git branch main
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (kasha)
+$ git checkout main
+Switched to branch 'main'
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git merge kasha
+Already up to date.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    repo/test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git add .
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git commit -m "Merged 2 branches"
+[main de1f7c2] Merged 2 branches
+ 1 file changed, 5 deletions(-)
+ delete mode 100644 repo/test.txt
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push origin main
+To https://github.com/sameekhsa/sameeksha
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/sameekhsa/sameeksha'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git pull origin main
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 19 (delta 2), reused 18 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (19/19), 1.47 KiB | 10.00 KiB/s, done.
+From https://github.com/sameekhsa/sameeksha
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push origin main
+To https://github.com/sameekhsa/sameeksha
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/sameekhsa/sameeksha'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push -u origin main
+To https://github.com/sameekhsa/sameeksha
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/sameekhsa/sameeksha'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git pull origin main --rebase
+From https://github.com/sameekhsa/sameeksha
+ * branch            main       -> FETCH_HEAD
+Successfully rebased and updated refs/heads/main.
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (10/10), 904 bytes | 452.00 KiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/sameekhsa/sameeksha
+   718bded..0277d64  main -> main
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ ^C
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Sameeksha.docx
+        ~$meeksha.docx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git add .
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git commit -m "M files"
+[main ce0bceb] M files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Sameeksha.docx
+ create mode 100644 ~$meeksha.docx
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 12.35 KiB | 6.17 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/sameekhsa/sameeksha
+   0277d64..ce0bceb  main -> main
+
+fs@DESKTOP-GGREQK6 MINGW64 ~/Desktop/sam (main)
+$
